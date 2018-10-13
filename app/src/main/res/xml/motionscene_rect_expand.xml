@@ -23,7 +23,7 @@
 
             <KeyPosition
                     app:target="@id/letter_s1"
-                    app:framePosition="60"
+                    app:framePosition="50"
                     app:percentY="1"
                     app:keyPositionType="deltaRelative"/>
 
@@ -41,7 +41,7 @@
 
             <KeyPosition
                     app:target="@id/letter_t1"
-                    app:framePosition="80"
+                    app:framePosition="70"
                     app:percentY="1"
                     app:keyPositionType="deltaRelative"/>
 
@@ -59,7 +59,7 @@
 
             <KeyPosition
                     app:target="@id/letter_r1"
-                    app:framePosition="65"
+                    app:framePosition="55"
                     app:percentY="1"
                     app:keyPositionType="deltaRelative"/>
 
@@ -71,14 +71,14 @@
 
             <KeyPosition
                     app:target="@id/letter_v1"
-                    app:framePosition="70"
-                    app:percentY="1"
+                    app:framePosition="50"
+                    app:percentY="0"
                     app:keyPositionType="deltaRelative"/>
 
             <KeyPosition
                     app:target="@id/letter_v1"
-                    app:framePosition="50"
-                    app:percentY="0"
+                    app:framePosition="60"
+                    app:percentY="1"
                     app:keyPositionType="deltaRelative"/>
 
             <KeyPosition
