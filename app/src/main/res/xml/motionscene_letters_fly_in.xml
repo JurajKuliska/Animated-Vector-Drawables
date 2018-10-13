@@ -7,7 +7,7 @@
             app:constraintSetStart="@id/start"
             app:constraintSetEnd="@id/end"
             app:interpolator="easeOut"
-            app:duration="2000"
+            app:duration="@integer/anim_letters_fly_in_duration"
             app:staggered="0.7">
 
     </Transition>

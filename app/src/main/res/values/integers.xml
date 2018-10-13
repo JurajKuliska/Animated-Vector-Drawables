@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="anim_letter_duration">350</integer>
+    <integer name="anim_letters_fly_in_duration">2000</integer>
+    <integer name="anim_rect_expand_duration">3000</integer>
+</resources>
