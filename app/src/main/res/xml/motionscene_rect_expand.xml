@@ -1,4 +1,106 @@
 <?xml version="1.0" encoding="utf-8"?>
-<MotionLayout>
+<MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+            app:constraintSetStart="@id/start"
+            app:constraintSetEnd="@id/end"
+            app:interpolator="easeOut"
+            app:duration="2000"
+            app:staggered="0.7">
+
+        <KeyFrameSet>
+            <KeyPosition
+                    app:target="@id/letter_s1"
+                    app:framePosition="50"
+                    app:percentY="0"
+                    app:keyPositionType="deltaRelative"/>
+
+        </KeyFrameSet>
+
+    </Transition>
+
+    <ConstraintSet
+            android:id="@+id/start">
+
+        <Constraint
+                android:id="@id/letter_s1"
+                android:layout_width="@dimen/logo_letter_width"
+                android:layout_height="@dimen/logo_letter_height"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/letter_t1"
+                app:layout_constraintHorizontal_chainStyle="packed"/>
+
+        <!--<Constraint-->
+        <!--android:id="@id/letter_s1"-->
+        <!--android:layout_width="@dimen/logo_letter_width"-->
+        <!--android:layout_height="@dimen/logo_letter_height"-->
+        <!--app:layout_constraintTop_toTopOf="parent"-->
+        <!--app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--app:layout_constraintStart_toEndOf="@id/letter_s1"-->
+        <!--app:layout_constraintEnd_toStartOf="@id/letter_r1"/>-->
+
+        <!--<Constraint-->
+        <!--android:id="@id/letter_s1"-->
+        <!--android:layout_width="@dimen/logo_letter_width"-->
+        <!--android:layout_height="@dimen/logo_letter_height"-->
+        <!--app:layout_constraintTop_toTopOf="parent"-->
+        <!--app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--app:layout_constraintStart_toEndOf="@id/letter_t1"-->
+        <!--app:layout_constraintEnd_toStartOf="@id/letter_v1"/>-->
+
+        <!--<Constraint-->
+        <!--android:id="@id/letter_s1"-->
+        <!--android:layout_width="@dimen/logo_letter_width"-->
+        <!--android:layout_height="@dimen/logo_letter_height"-->
+        <!--app:layout_constraintTop_toTopOf="parent"-->
+        <!--app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--app:layout_constraintStart_toEndOf="@id/letter_r1"-->
+        <!--app:layout_constraintEnd_toEndOf="parent"/>-->
+
+    </ConstraintSet>
+
+    <ConstraintSet
+            android:id="@+id/end">
+
+        <Constraint
+                android:id="@id/letter_s1"
+                android:layout_width="@dimen/logo_letter_width"
+                android:layout_height="@dimen/logo_letter_height_large"
+                app:layout_constraintBottom_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/letter_t1"
+                app:layout_constraintHorizontal_chainStyle="packed"/>
+
+        <!--<Constraint-->
+        <!--android:id="@id/letter_s1"-->
+        <!--android:layout_width="@dimen/logo_letter_width"-->
+        <!--android:layout_height="0dp"-->
+        <!--app:layout_constraintTop_toTopOf="parent"-->
+        <!--app:layout_constraintBottom_toBottomOf="@id/letters_anchor"-->
+        <!--app:layout_constraintStart_toEndOf="@id/letter_s1"-->
+        <!--app:layout_constraintEnd_toStartOf="@id/letter_r1"/>-->
+
+        <!--<Constraint-->
+        <!--android:id="@id/letter_s1"-->
+        <!--android:layout_width="@dimen/logo_letter_width"-->
+        <!--android:layout_height="0dp"-->
+        <!--app:layout_constraintTop_toTopOf="parent"-->
+        <!--app:layout_constraintBottom_toBottomOf="@id/letters_anchor"-->
+        <!--app:layout_constraintStart_toEndOf="@id/letter_t1"-->
+        <!--app:layout_constraintEnd_toStartOf="@id/letter_v1"/>-->
+
+        <!--<Constraint-->
+        <!--android:id="@id/letter_s1"-->
+        <!--android:layout_width="@dimen/logo_letter_width"-->
+        <!--android:layout_height="0dp"-->
+        <!--app:layout_constraintTop_toTopOf="parent"-->
+        <!--app:layout_constraintBottom_toBottomOf="@id/letters_anchor"-->
+        <!--app:layout_constraintStart_toEndOf="@id/letter_r1"-->
+        <!--app:layout_constraintEnd_toEndOf="parent"/>-->
+
+    </ConstraintSet>
 
 </MotionLayout>

@@ -26,7 +26,7 @@
                 android:layout_width="@dimen/logo_letter_width"
                 android:layout_height="@dimen/logo_letter_height"
                 android:src="@drawable/anim_s_circle"
-                android:padding="@dimen/logo_letter_margin"
+                style="@style/LetterStyle"
                 app:layout_constraintHorizontal_chainStyle="packed"/>
 
         <ImageView
@@ -34,36 +34,46 @@
                 android:layout_width="@dimen/logo_letter_width"
                 android:layout_height="@dimen/logo_letter_height"
                 android:src="@drawable/anim_t_circle"
-                android:padding="@dimen/logo_letter_margin"/>
+                style="@style/LetterStyle"/>
 
         <ImageView
                 android:id="@+id/letter_r"
                 android:layout_width="@dimen/logo_letter_width"
                 android:layout_height="@dimen/logo_letter_height"
-                android:padding="@dimen/logo_letter_margin"
+                style="@style/LetterStyle"
                 android:src="@drawable/anim_r_circle"/>
 
         <ImageView
                 android:id="@+id/letter_v"
                 android:layout_width="@dimen/logo_letter_width"
                 android:layout_height="@dimen/logo_letter_height"
-                android:padding="@dimen/logo_letter_margin"
+                style="@style/LetterStyle"
                 android:src="@drawable/anim_v_circle"/>
     </android.support.constraint.motion.MotionLayout>
 
-    <android.support.constraint.ConstraintLayout
+    <android.support.constraint.motion.MotionLayout
             android:id="@+id/black_letters_container"
             android:visibility="invisible"
             android:background="@android:color/black"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            app:layoutDescription="@xml/motionscene_rect_expand"
+    >
+
+        <Space
+                android:layout_width="@dimen/logo_letter_padding_horizontal"
+                android:layout_height="0dp"
+                android:id="@+id/letters_anchor"
+                app:layout_constraintEnd_toEndOf="@id/letter_v1"
+                app:layout_constraintTop_toTopOf="@id/letter_v1"
+                app:layout_constraintBottom_toBottomOf="@id/letter_v1"/>
 
         <ImageView
                 android:id="@+id/letter_s1"
                 android:layout_width="@dimen/logo_letter_width"
                 android:layout_height="@dimen/logo_letter_height"
                 android:src="@drawable/anim_s_rect"
-                android:padding="@dimen/logo_letter_margin"
+                style="@style/LetterStyle"
                 android:tint="@android:color/white"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -76,7 +86,7 @@
                 android:layout_width="@dimen/logo_letter_width"
                 android:layout_height="@dimen/logo_letter_height"
                 android:src="@drawable/anim_t_rect"
-                android:padding="@dimen/logo_letter_margin"
+                style="@style/LetterStyle"
                 android:tint="@android:color/white"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -87,7 +97,7 @@
                 android:id="@+id/letter_r1"
                 android:layout_width="@dimen/logo_letter_width"
                 android:layout_height="@dimen/logo_letter_height"
-                android:padding="@dimen/logo_letter_margin"
+                style="@style/LetterStyle"
                 android:src="@drawable/anim_r_rect"
                 android:tint="@android:color/white"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -99,7 +109,7 @@
                 android:id="@+id/letter_v1"
                 android:layout_width="@dimen/logo_letter_width"
                 android:layout_height="@dimen/logo_letter_height"
-                android:padding="@dimen/logo_letter_margin"
+                style="@style/LetterStyle"
                 android:src="@drawable/anim_v_rect"
                 android:tint="@android:color/white"
                 app:layout_constraintTop_toTopOf="parent"
@@ -107,22 +117,15 @@
                 app:layout_constraintStart_toEndOf="@id/letter_r1"
                 app:layout_constraintEnd_toEndOf="parent"/>
 
-        <Space
-                android:layout_width="@dimen/logo_letter_margin"
-                android:layout_height="0dp"
-                android:id="@+id/cursor_anchor"
-                app:layout_constraintEnd_toEndOf="@id/letter_v1"
-                app:layout_constraintTop_toTopOf="@id/letter_v1"
-                app:layout_constraintBottom_toBottomOf="@id/letter_v1"/>
-
         <ImageView
+                android:id="@+id/letter_cursor"
                 android:layout_width="@dimen/logo_cursor_width"
-                android:layout_height="0dp"
-                app:layout_constraintTop_toTopOf="@id/cursor_anchor"
-                app:layout_constraintBottom_toBottomOf="@id/cursor_anchor"
-                app:layout_constraintStart_toStartOf="@id/cursor_anchor"
+                android:layout_height="@dimen/logo_letter_height"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@id/letters_anchor"
                 android:src="@drawable/ic_cursor"/>
 
-    </android.support.constraint.ConstraintLayout>
+    </android.support.constraint.motion.MotionLayout>
 
 </FrameLayout>

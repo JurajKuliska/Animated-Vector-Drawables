@@ -117,5 +117,6 @@ class MainActivity : AppCompatActivity() {
         Handler().postDelayed({ animateVectorDrawable(letter_s1) }, oneLetterDelay)
         Handler().postDelayed({ animateVectorDrawable(letter_v1) }, oneLetterDelay * 2)
         Handler().postDelayed({ animateVectorDrawable(letter_t1) }, oneLetterDelay * 3)
+        Handler().postDelayed({ black_letters_container.transitionToEnd() }, oneLetterDelay * 5)
     }
 }

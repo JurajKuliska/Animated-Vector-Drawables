@@ -8,4 +8,12 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="LetterStyle">
+        <item name="android:paddingStart">@dimen/logo_letter_padding_horizontal</item>
+        <item name="android:paddingEnd">@dimen/logo_letter_padding_horizontal</item>
+        <item name="android:paddingTop">@dimen/logo_letter_padding_vertical</item>
+        <item name="android:paddingBottom">@dimen/logo_letter_padding_vertical</item>
+        <item name="android:scaleType">fitXY</item>
+    </style>
+
 </resources>
