@@ -6,8 +6,6 @@ import android.os.Bundle
 import android.os.Handler
 import android.support.constraint.motion.MotionLayout
 import android.support.v7.app.AppCompatActivity
-import android.view.Menu
-import android.view.MenuItem
 import android.view.View
 import android.view.ViewAnimationUtils
 import android.widget.ImageView
@@ -23,22 +21,9 @@ class MainActivity : AppCompatActivity() {
         setupTransitionListeners()
 
         Handler().postDelayed({ red_letters_container.transitionToEnd() }, 50)
-    }
-
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.menu_main, menu)
-        return super.onCreateOptionsMenu(menu)
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
-        return when (item?.itemId) {
-            R.id.menu_circular_reveal -> {
-                resetToStart()
-                true
-            }
-            else -> super.onOptionsItemSelected(item)
+        black_letters_container.setOnClickListener {
+            resetToStart()
         }
-
     }
 
     private fun resetToStart() {
