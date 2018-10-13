@@ -4,6 +4,7 @@ import android.animation.Animator
 import android.graphics.drawable.AnimatedVectorDrawable
 import android.os.Bundle
 import android.os.Handler
+import android.support.annotation.DrawableRes
 import android.support.constraint.motion.MotionLayout
 import android.support.v7.app.AppCompatActivity
 import android.view.View
@@ -24,14 +25,16 @@ class MainActivity : AppCompatActivity() {
         black_letters_container.setOnClickListener {
             resetToStart()
         }
+        red_letters_container.setOnClickListener {
+            resetToStart()
+        }
     }
 
     private fun resetToStart() {
         if (!isAnimationInProgress) {
             isAnimationInProgress = true
 
-
-            red_letters_container.visibility = View.GONE
+            red_letters_container.visibility = View.INVISIBLE
             circularRevealDarkLogo(false)
             //after the circular reveal is gone
             Handler().postDelayed({
@@ -40,9 +43,9 @@ class MainActivity : AppCompatActivity() {
                 black_letters_container.visibility = View.VISIBLE
                 red_letters_container.setTransitionListener(null)
                 black_letters_container.setTransitionListener(null)
+                resetVectorDrawables()
                 red_letters_container.transitionToStart()
                 black_letters_container.transitionToStart()
-                resetVectorDrawables()
                 Handler().postDelayed({
                     black_letters_container.visibility = View.INVISIBLE
                     loading_overlay.visibility = View.GONE
@@ -59,10 +62,10 @@ class MainActivity : AppCompatActivity() {
 
             override fun onTransitionCompleted(p0: MotionLayout?, p1: Int) {
                 val oneLetterDelay = (resources.getInteger(R.integer.anim_letter_duration) * 0.8).toLong()
-                animateVectorDrawable(letter_s)
-                Handler().postDelayed({ animateVectorDrawable(letter_t) }, oneLetterDelay)
-                Handler().postDelayed({ animateVectorDrawable(letter_r) }, oneLetterDelay * 2)
-                Handler().postDelayed({ animateVectorDrawable(letter_v) }, oneLetterDelay * 3)
+                animateVectorDrawable(letter_s, R.drawable.anim_s_circle)
+                Handler().postDelayed({ animateVectorDrawable(letter_t, R.drawable.anim_t_circle) }, oneLetterDelay)
+                Handler().postDelayed({ animateVectorDrawable(letter_r, R.drawable.anim_r_circle) }, oneLetterDelay * 2)
+                Handler().postDelayed({ animateVectorDrawable(letter_v, R.drawable.anim_v_circle) }, oneLetterDelay * 3)
                 Handler().postDelayed({ circularRevealDarkLogo(true) }, oneLetterDelay * 5)
             }
 
@@ -77,23 +80,26 @@ class MainActivity : AppCompatActivity() {
         })
     }
 
-    private fun animateVectorDrawable(imageView: ImageView) {
+    private fun animateVectorDrawable(imageView: ImageView, @DrawableRes drawableRes: Int) {
+        imageView.setImageDrawable(resources.getDrawable(drawableRes, theme))
         (imageView.drawable as AnimatedVectorDrawable).start()
     }
 
-    private fun resetVectorDrawable(imageView: ImageView) {
-        (imageView.drawable as AnimatedVectorDrawable).reset()
+    private fun resetVectorDrawable(imageView: ImageView, @DrawableRes drawableRes: Int) {
+        imageView.setImageDrawable(resources.getDrawable(drawableRes, theme))
     }
 
+    //here the drawables are reset to their starting position but not to the animated drawable as that wasn't loaded at its starting position
+    //it is loaded into the drawable just before the animation starts
     private fun resetVectorDrawables() {
-        resetVectorDrawable(letter_s)
-        resetVectorDrawable(letter_s1)
-        resetVectorDrawable(letter_t)
-        resetVectorDrawable(letter_t1)
-        resetVectorDrawable(letter_r)
-        resetVectorDrawable(letter_r1)
-        resetVectorDrawable(letter_v)
-        resetVectorDrawable(letter_v1)
+        resetVectorDrawable(letter_s, R.drawable.ic_strv_s_circle)
+        resetVectorDrawable(letter_s1, R.drawable.ic_strv_s)
+        resetVectorDrawable(letter_t, R.drawable.ic_strv_t_circle)
+        resetVectorDrawable(letter_t1, R.drawable.ic_strv_t)
+        resetVectorDrawable(letter_r, R.drawable.ic_strv_r_circle)
+        resetVectorDrawable(letter_r1, R.drawable.ic_strv_r)
+        resetVectorDrawable(letter_v, R.drawable.ic_strv_v_circle)
+        resetVectorDrawable(letter_v1, R.drawable.ic_strv_v)
     }
 
 
@@ -124,10 +130,10 @@ class MainActivity : AppCompatActivity() {
 
     private fun animateLettersToSquares() {
         val oneLetterDelay = (resources.getInteger(R.integer.anim_letter_duration) * 0.5).toLong()
-        animateVectorDrawable(letter_r1)
-        Handler().postDelayed({ animateVectorDrawable(letter_s1) }, oneLetterDelay * 2)
-        Handler().postDelayed({ animateVectorDrawable(letter_v1) }, oneLetterDelay)
-        Handler().postDelayed({ animateVectorDrawable(letter_t1) }, oneLetterDelay)
+        animateVectorDrawable(letter_r1, R.drawable.anim_r_rect)
+        Handler().postDelayed({ animateVectorDrawable(letter_s1, R.drawable.anim_s_rect) }, oneLetterDelay * 2)
+        Handler().postDelayed({ animateVectorDrawable(letter_v1, R.drawable.anim_v_rect) }, oneLetterDelay)
+        Handler().postDelayed({ animateVectorDrawable(letter_t1, R.drawable.anim_t_rect) }, oneLetterDelay)
         Handler().postDelayed({ black_letters_container.transitionToEnd() }, oneLetterDelay * 3)
     }
 }

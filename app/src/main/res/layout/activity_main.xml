@@ -11,8 +11,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/red_letters_container"
-            app:layoutDescription="@xml/motionscene_letters_fly_in"
-            tools:showPaths="true">
+            app:layoutDescription="@xml/motionscene_letters_fly_in">
 
         <ImageView
                 android:id="@+id/letter_s"
@@ -20,6 +19,10 @@
                 android:layout_height="@dimen/logo_letter_height"
                 android:src="@drawable/anim_s_circle"
                 style="@style/LetterStyle"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/letter_t"
                 app:layout_constraintHorizontal_chainStyle="packed"/>
 
         <ImageView
@@ -27,21 +30,34 @@
                 android:layout_width="@dimen/logo_letter_width"
                 android:layout_height="@dimen/logo_letter_height"
                 android:src="@drawable/anim_t_circle"
-                style="@style/LetterStyle"/>
+                style="@style/LetterStyle"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/letter_s"
+                app:layout_constraintEnd_toStartOf="@id/letter_r"/>
 
         <ImageView
                 android:id="@+id/letter_r"
                 android:layout_width="@dimen/logo_letter_width"
                 android:layout_height="@dimen/logo_letter_height"
                 style="@style/LetterStyle"
-                android:src="@drawable/anim_r_circle"/>
+                android:src="@drawable/anim_r_circle"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/letter_t"
+                app:layout_constraintEnd_toStartOf="@id/letter_v"/>
 
         <ImageView
                 android:id="@+id/letter_v"
                 android:layout_width="@dimen/logo_letter_width"
                 android:layout_height="@dimen/logo_letter_height"
                 style="@style/LetterStyle"
-                android:src="@drawable/anim_v_circle"/>
+                android:src="@drawable/anim_v_circle"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/letter_r"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
     </android.support.constraint.motion.MotionLayout>
 
     <android.support.constraint.motion.MotionLayout
