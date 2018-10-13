@@ -106,17 +106,17 @@ class MainActivity : AppCompatActivity() {
             override fun onAnimationCancel(p0: Animator?) {}
             override fun onAnimationStart(p0: Animator?) {}
             override fun onAnimationEnd(p0: Animator?) {
-                Handler().postDelayed({ animateLettersToSquares() }, 700)
+                Handler().postDelayed({ animateLettersToSquares() }, 300)
             }
         })
     }
 
     private fun animateLettersToSquares() {
-        val oneLetterDelay = (resources.getInteger(R.integer.anim_letter_duration) * 0.8).toLong()
+        val oneLetterDelay = (resources.getInteger(R.integer.anim_letter_duration) * 0.5).toLong()
         animateVectorDrawable(letter_r1)
-        Handler().postDelayed({ animateVectorDrawable(letter_s1) }, oneLetterDelay)
-        Handler().postDelayed({ animateVectorDrawable(letter_v1) }, oneLetterDelay * 2)
-        Handler().postDelayed({ animateVectorDrawable(letter_t1) }, oneLetterDelay * 3)
-        Handler().postDelayed({ black_letters_container.transitionToEnd() }, oneLetterDelay * 5)
+        Handler().postDelayed({ animateVectorDrawable(letter_s1) }, oneLetterDelay * 2)
+        Handler().postDelayed({ animateVectorDrawable(letter_v1) }, oneLetterDelay)
+        Handler().postDelayed({ animateVectorDrawable(letter_t1) }, oneLetterDelay)
+        Handler().postDelayed({ black_letters_container.transitionToEnd() }, oneLetterDelay * 3)
     }
 }
