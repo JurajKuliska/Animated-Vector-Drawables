@@ -6,9 +6,9 @@
     <Transition
             app:constraintSetStart="@id/start"
             app:constraintSetEnd="@id/end"
-            app:duration="2000"
             app:interpolator="easeOut"
-            app:staggered="0.75">
+            app:duration="2000"
+            app:staggered="0.7">
 
     </Transition>
 

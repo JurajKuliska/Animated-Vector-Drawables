@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <animated-vector
         xmlns:android="http://schemas.android.com/apk/res/android"
-        android:drawable="@drawable/ic_strv_s_rect">
+        android:drawable="@drawable/ic_strv_s">
 
     <target android:animation="@animator/animator_s_rect"
             android:name="letter_s"/>
