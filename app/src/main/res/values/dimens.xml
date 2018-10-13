@@ -2,5 +2,8 @@
 <resources>
     <dimen name="logo_letter_height">192dp</dimen>
     <dimen name="logo_letter_width">64dp</dimen>
-    <dimen name="logo_letter_margin">8dp</dimen>
+    <dimen name="logo_cursor_width">10dp</dimen>
+    <dimen name="logo_letter_height_small">72dp</dimen>
+    <dimen name="logo_letter_width_small">24dp</dimen>
+    <dimen name="logo_letter_margin">7dp</dimen>
 </resources>

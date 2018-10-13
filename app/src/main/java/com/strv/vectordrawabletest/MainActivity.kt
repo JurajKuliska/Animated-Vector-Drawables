@@ -10,6 +10,7 @@ import android.view.MenuItem
 import android.view.View
 import android.view.ViewAnimationUtils
 import android.widget.ImageView
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -41,6 +42,7 @@ class MainActivity : AppCompatActivity() {
         setOnClickListenerForAnimationForView(R.id.letter_t)
         setOnClickListenerForAnimationForView(R.id.letter_s)
         setOnClickListenerForAnimationForView(R.id.letter_r)
+        red_letters_container.transitionToEnd()
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
