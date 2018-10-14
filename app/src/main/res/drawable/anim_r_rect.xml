@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <animated-vector
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        android:drawable="@drawable/ic_strv_r">
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:drawable="@drawable/ic_strv_r">
 
-    <target android:animation="@animator/animator_r_rect"
-            android:name="letter_r"/>
+	<target
+		android:name="letter_r"
+		android:animation="@animator/animator_r_rect" />
 
 </animated-vector>

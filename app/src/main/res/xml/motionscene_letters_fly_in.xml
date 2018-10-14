@@ -1,94 +1,94 @@
 <?xml version="1.0" encoding="utf-8"?>
 <MotionScene
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto">
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <Transition
-            app:constraintSetStart="@id/start"
-            app:constraintSetEnd="@id/end"
-            app:interpolator="easeInOut"
-            app:duration="@integer/anim_letters_fly_in_duration"
-            app:staggered="0.4">
+	<Transition
+		app:constraintSetStart="@id/start"
+		app:constraintSetEnd="@id/end"
+		app:interpolator="easeInOut"
+		app:duration="@integer/anim_letters_fly_in_duration"
+		app:staggered="0.4">
 
-    </Transition>
+	</Transition>
 
-    <ConstraintSet
-            android:id="@+id/start">
+	<ConstraintSet
+		android:id="@+id/start">
 
-        <Constraint
-                android:id="@id/letter_s"
-                android:layout_width="@dimen/logo_letter_width_small"
-                android:layout_height="@dimen/logo_letter_height_small"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintEnd_toStartOf="parent"
-                app:pathMotionArc="startHorizontal"/>
+		<Constraint
+			android:id="@id/letter_s"
+			android:layout_width="@dimen/logo_letter_width_small"
+			android:layout_height="@dimen/logo_letter_height_small"
+			app:layout_constraintTop_toTopOf="parent"
+			app:layout_constraintEnd_toStartOf="parent"
+			app:pathMotionArc="startHorizontal" />
 
-        <Constraint
-                android:id="@id/letter_t"
-                app:layout_constraintBottom_toBottomOf="parent"
-                android:layout_width="@dimen/logo_letter_width_small"
-                android:layout_height="@dimen/logo_letter_height_small"
-                app:layout_constraintEnd_toStartOf="parent"
-                app:pathMotionArc="startHorizontal"/>
+		<Constraint
+			android:id="@id/letter_t"
+			android:layout_width="@dimen/logo_letter_width_small"
+			android:layout_height="@dimen/logo_letter_height_small"
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintEnd_toStartOf="parent"
+			app:pathMotionArc="startHorizontal" />
 
-        <Constraint
-                android:id="@id/letter_r"
-                app:layout_constraintTop_toTopOf="parent"
-                android:layout_width="@dimen/logo_letter_width_small"
-                android:layout_height="@dimen/logo_letter_height_small"
-                app:layout_constraintStart_toEndOf="parent"
-                app:pathMotionArc="startHorizontal"/>
+		<Constraint
+			android:id="@id/letter_r"
+			android:layout_width="@dimen/logo_letter_width_small"
+			android:layout_height="@dimen/logo_letter_height_small"
+			app:layout_constraintTop_toTopOf="parent"
+			app:layout_constraintStart_toEndOf="parent"
+			app:pathMotionArc="startHorizontal" />
 
-        <Constraint
-                android:id="@id/letter_v"
-                app:layout_constraintBottom_toBottomOf="parent"
-                android:layout_width="@dimen/logo_letter_width_small"
-                android:layout_height="@dimen/logo_letter_height_small"
-                app:layout_constraintStart_toEndOf="parent"
-                app:pathMotionArc="startHorizontal"/>
+		<Constraint
+			android:id="@id/letter_v"
+			android:layout_width="@dimen/logo_letter_width_small"
+			android:layout_height="@dimen/logo_letter_height_small"
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintStart_toEndOf="parent"
+			app:pathMotionArc="startHorizontal" />
 
-    </ConstraintSet>
+	</ConstraintSet>
 
-    <ConstraintSet
-            android:id="@+id/end">
+	<ConstraintSet
+		android:id="@+id/end">
 
-        <Constraint
-                android:id="@id/letter_s"
-                android:layout_width="@dimen/logo_letter_width"
-                android:layout_height="@dimen/logo_letter_height"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toStartOf="@id/letter_t"
-                app:layout_constraintHorizontal_chainStyle="packed"/>
+		<Constraint
+			android:id="@id/letter_s"
+			android:layout_width="@dimen/logo_letter_width"
+			android:layout_height="@dimen/logo_letter_height"
+			app:layout_constraintTop_toTopOf="parent"
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintEnd_toStartOf="@id/letter_t"
+			app:layout_constraintHorizontal_chainStyle="packed" />
 
-        <Constraint
-                android:id="@id/letter_t"
-                android:layout_width="@dimen/logo_letter_width"
-                android:layout_height="@dimen/logo_letter_height"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@id/letter_s"
-                app:layout_constraintEnd_toStartOf="@id/letter_r"/>
+		<Constraint
+			android:id="@id/letter_t"
+			android:layout_width="@dimen/logo_letter_width"
+			android:layout_height="@dimen/logo_letter_height"
+			app:layout_constraintTop_toTopOf="parent"
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintStart_toEndOf="@id/letter_s"
+			app:layout_constraintEnd_toStartOf="@id/letter_r" />
 
-        <Constraint
-                android:id="@id/letter_r"
-                android:layout_width="@dimen/logo_letter_width"
-                android:layout_height="@dimen/logo_letter_height"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@id/letter_t"
-                app:layout_constraintEnd_toStartOf="@id/letter_v"/>
+		<Constraint
+			android:id="@id/letter_r"
+			android:layout_width="@dimen/logo_letter_width"
+			android:layout_height="@dimen/logo_letter_height"
+			app:layout_constraintTop_toTopOf="parent"
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintStart_toEndOf="@id/letter_t"
+			app:layout_constraintEnd_toStartOf="@id/letter_v" />
 
-        <Constraint
-                android:id="@id/letter_v"
-                android:layout_width="@dimen/logo_letter_width"
-                android:layout_height="@dimen/logo_letter_height"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@id/letter_r"
-                app:layout_constraintEnd_toEndOf="parent"/>
+		<Constraint
+			android:id="@id/letter_v"
+			android:layout_width="@dimen/logo_letter_width"
+			android:layout_height="@dimen/logo_letter_height"
+			app:layout_constraintTop_toTopOf="parent"
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintStart_toEndOf="@id/letter_r"
+			app:layout_constraintEnd_toEndOf="parent" />
 
-    </ConstraintSet>
+	</ConstraintSet>
 
 </MotionScene>
