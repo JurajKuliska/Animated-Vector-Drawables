@@ -6,7 +6,7 @@
 	<Transition
 		app:constraintSetStart="@id/start"
 		app:constraintSetEnd="@id/end"
-		app:interpolator="easeInOut"
+			app:motionInterpolator="easeInOut"
 		app:duration="@integer/anim_letters_fly_in_duration"
 		app:staggered="0.4">
 

@@ -4,23 +4,13 @@ import android.animation.Animator
 import android.graphics.drawable.AnimatedVectorDrawable
 import android.os.Bundle
 import android.os.Handler
-import android.support.annotation.DrawableRes
-import android.support.constraint.motion.MotionLayout
-import android.support.v7.app.AppCompatActivity
 import android.view.View
 import android.view.ViewAnimationUtils
 import android.widget.ImageView
-import kotlinx.android.synthetic.main.activity_main.black_letters_container
-import kotlinx.android.synthetic.main.activity_main.letter_r
-import kotlinx.android.synthetic.main.activity_main.letter_r1
-import kotlinx.android.synthetic.main.activity_main.letter_s
-import kotlinx.android.synthetic.main.activity_main.letter_s1
-import kotlinx.android.synthetic.main.activity_main.letter_t
-import kotlinx.android.synthetic.main.activity_main.letter_t1
-import kotlinx.android.synthetic.main.activity_main.letter_v
-import kotlinx.android.synthetic.main.activity_main.letter_v1
-import kotlinx.android.synthetic.main.activity_main.loading_overlay
-import kotlinx.android.synthetic.main.activity_main.red_letters_container
+import androidx.annotation.DrawableRes
+import androidx.appcompat.app.AppCompatActivity
+import androidx.constraintlayout.motion.widget.MotionLayout
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -68,6 +58,10 @@ class MainActivity : AppCompatActivity() {
 
 	private fun setupTransitionListeners() {
 		red_letters_container.setTransitionListener(object : MotionLayout.TransitionListener {
+			override fun onTransitionTrigger(p0: MotionLayout?, p1: Int, p2: Boolean, p3: Float) {}
+
+			override fun onTransitionStarted(p0: MotionLayout?, p1: Int, p2: Int) {}
+
 			override fun onTransitionChange(p0: MotionLayout?, p1: Int, p2: Int, progress: Float) {}
 
 			override fun onTransitionCompleted(p0: MotionLayout?, p1: Int) {
@@ -82,6 +76,10 @@ class MainActivity : AppCompatActivity() {
 		})
 
 		black_letters_container.setTransitionListener(object : MotionLayout.TransitionListener {
+			override fun onTransitionTrigger(p0: MotionLayout?, p1: Int, p2: Boolean, p3: Float) {}
+
+			override fun onTransitionStarted(p0: MotionLayout?, p1: Int, p2: Int) {}
+
 			override fun onTransitionChange(p0: MotionLayout?, p1: Int, p2: Int, p3: Float) {}
 
 			override fun onTransitionCompleted(p0: MotionLayout?, p1: Int) {
